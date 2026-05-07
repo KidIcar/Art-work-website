@@ -11,23 +11,25 @@ body {
 }
 
 header {
+  // height: 76px;
   color: white;
   background: #CE7EC6;
   margin-top: 0px;
+  // margin-bottom: 10px;
   text-align: center;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: #ffff;
   font-family: "Merriweather Sans";
   font-size: 64px;
   font-style: normal;
   font-weight: 800;
-  line-height: normal;
+  line-height: normal; 
   display: flex;
 }
 
 h2 {
-  color: white;
+  color: #ffff;  
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -42,7 +44,6 @@ h2 {
   display: flex;
   align-items: center;
 }
-
 .gallery-box {
   width: 90%;
   max-width: 1440px;
@@ -50,5 +51,5 @@ h2 {
 }
 
 body {
-  background: white;
-}/*# sourceMappingURL=main.css.map */
+ background: white;
+}

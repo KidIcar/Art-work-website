@@ -9,10 +9,14 @@
     <title>Layton`s Art Website</title>
     
 </head>
-<body>
+<body id="top">
   <header>
-    <!-- <a href="index.html"><img src="images/logo.png" alt="Tage Layton`s Art Website Logo"></a> -->
-  <img src="images/cropped hose.png" alt="Home Button" class="home-button">
+    <div class="img-container">
+      <a href="viewer.html" class="home-link" aria-label="Home">
+        <img src="images/cropped hose.png" alt="Home Button" class="home-button">
+      </a>
+    </div>
+        <!-- <a href="index.html"><img src="images/logo.png" alt="Tage Layton`s Art Website Logo"></a> -->
     <h1>Tage Layton`s Art Website</h1>
   </header>
 
@@ -37,8 +41,21 @@
     </div>
   </section>
 
+  <section class="page-bottom">
+    <div class="page-bottom-panel">
+      <h2>More From the Collection</h2>
+      <p>Keep exploring the gallery or scroll back to the top of the page.</p>
+      <a href="#top" class="page-bottom-btn">Back to Top</a>
+    </div>
+  </section>
+
   <footer>
-    <p>&copy; 2024 Layton`s Art Website. All rights reserved.</p>
+    <div class="footer-strip">
+      <p>Congrats! You have reached the bottom!</p>
+    </div>
+    <div class="footer-main">
+      <a class="back-to-top" href="#top">Back to Top</a>
+    </div>
   </footer>
 
 

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="vendor/lightbox3/dist/lightbox3.css">
+  <link rel="stylesheet" href="css/main.css">
+  <title>Tage Layton`s Gallery Viewer</title>
+</head>
+<body id="top">
+  <header class="viewer-header">
+    <a href="viewer.html" class="viewer-home-link" aria-label="Home">
+      <img src="images/cropped hose.png" alt="Home" class="viewer-home-icon">
+    </a>
+    <h1>Tage Layton`s Art Website</h1>
+  </header>
+
+  <section class="viewer-preview-header">
+    <h2>Gallery Preview</h2>
+  </section>
+
+  <main class="viewer-content">
+    <button class="viewer-control prev" id="prevButton" aria-label="Previous image">‹</button>
+    <a id="lightboxLink" href="" data-lightbox="gallery-viewer" data-title="Gallery preview image">
+      <div class="viewer-frame">
+        <img id="viewerImage" src="images/TageLayton_Graphic-Design_Eye-Monster-Looming_2025.png" alt="Gallery preview" class="viewer-image">
+        <div class="viewer-caption" id="viewerCaption">Eye Monster Looming</div>
+      </div>
+    </a>
+    <button class="viewer-control next" id="nextButton" aria-label="Next image">›</button>
+  </main>
+
+  <div class="viewer-actions">
+    <a href="index.html" class="viewer-gallery-btn">Gallery</a>
+  </div>
+
+  <footer>
+    <div class="footer-strip">
+      <p>Congrats! You have reached the bottom!</p>
+    </div>
+    <div class="footer-main">
+      <a class="back-to-top" href="#top">Back to Top</a>
+    </div>
+  </footer>
+
+  <script>
+    const images = [
+      { src: 'images/TageLayton_Graphic-Design_Eye-Monster-Looming_2025.png', title: 'Eye Monster Looming' },
+      { src: 'images/TageLayton_Graphic-Design_Eye-Monster-Doorway_2025.png', title: 'Eye Monster Doorway' },
+      { src: 'images/TageLayton_Graphic-Design_Pelican-Fanclub-1-FRONT-Album-Cover_2025.png', title: 'Pelican Fanclub Front' },
+      { src: 'images/TageLayton_Graphic-Design_Pelican-Fanclub-2-BACK-Album-Cover_2025.png', title: 'Pelican Fanclub Back' },
+      { src: 'images/TageLayton_Clay&Plaster_Kiwi-Assortment_2026.png', title: 'Kiwi Assortment' },
+      { src: 'images/TageLayton_Food-Art(Soysauce-Dried-Cereal-Rasin)_Kiwi-1_2025.png', title: 'Soy Sauce Kiwi' },
+      { src: 'images/TageLayton_Drawing_Song-Sketch-1_2025.png', title: 'Song Sketch 1' },
+      { src: 'images/TageLayton_Drawing_Song-Sketch-2_2025.png', title: 'Song Sketch 2' },
+      { src: 'images/TageLayton_Drawing_Song-Sketch-3_2025.png', title: 'Song Sketch 3' },
+      { src: 'images/TageLayton_Photos-11_2025.JPG', title: 'Macro Frosted Leaf' },
+      { src: 'images/TageLayton_Photos-16_2025.JPG', title: 'Macro Focus Ice' },
+      { src: 'images/TageLayton_Photos-1_2025.JPG', title: 'Macro Focus Moss' }
+    ];
+
+    let currentIndex = 0;
+    const viewerImage = document.getElementById('viewerImage');
+    const viewerCaption = document.getElementById('viewerCaption');
+    const lightboxLink = document.getElementById('lightboxLink');
+    const prevButton = document.getElementById('prevButton');
+    const nextButton = document.getElementById('nextButton');
+
+    function updateViewer(index) {
+      currentIndex = (index + images.length) % images.length;
+      const item = images[currentIndex];
+      viewerImage.src = item.src;
+      viewerImage.alt = item.title;
+      viewerCaption.textContent = item.title;
+      lightboxLink.href = item.src;
+      lightboxLink.setAttribute('data-title', item.title);
+    }
+
+    prevButton.addEventListener('click', () => updateViewer(currentIndex - 1));
+    nextButton.addEventListener('click', () => updateViewer(currentIndex + 1));
+
+    updateViewer(0);
+  </script>
+  <script src="vendor/lightbox3/dist/lightbox3.min.js"></script>
+</body>
+</html>

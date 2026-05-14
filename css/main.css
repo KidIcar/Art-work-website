@@ -171,7 +171,7 @@ header h1 {
 .viewer-actions {
   display: flex;
   justify-content: center;
-  margin: 0 auto 26px;
+  margin: 0 auto 20%;
   padding: 0 16px;
 }
 
